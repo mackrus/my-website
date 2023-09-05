@@ -1,8 +1,8 @@
-### Solar System portfolio website
+# Solar System portfolio website
 
 This project is a 3D simulation of the solar system built using Three.js. It features all the planets of the solar system, including the sun and the moon, with their respective orbits and rotations.
 
-# Features
+## Features
 
 - Realistic 3D models of the planets with textures.
 - Planets rotate around their own axis and orbit around the sun.
@@ -13,7 +13,7 @@ This project is a 3D simulation of the solar system built using Three.js. It fea
 - Stars are randomly generated in the background to simulate the universe.
 
   
-# How to Run
+### How to Run
 
 To run this project, you need to have a server running. You can use any server of your choice. If you have Python installed, you can use Python's built-in HTTP server.
 
@@ -23,12 +23,12 @@ Then, open your web browser and navigate to http://localhost:8000.
 
 
 
-# Libraries Used
+### Libraries Used
 
 - <a href="https://threejs.org">Three.js<a/>: A cross-browser JavaScript library used to create and display animated 3D computer graphics in a web browser.
 
 
-# Future Improvements
+## Future Improvements
 
 - Add more celestial bodies like asteroids, comets, and dwarf planets.
 - Improve the textures and models of the planets for a more realistic look.
@@ -36,14 +36,14 @@ Then, open your web browser and navigate to http://localhost:8000.
 - Add other parts to the website such as "about me" etc where each part leads to the camera zooming in on a specific planet. 
 
   
-# Contributions
+## Contributions
 
 Contributions, issues, and feature requests are welcome. Feel free to check issues page if you want to contribute.
 
-# Author
+### Author
 
 Markus Bajlo
 
-# License
+### License
 
 This project is MIT licensed.

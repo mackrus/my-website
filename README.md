@@ -16,9 +16,8 @@ This project is a 3D simulation of the solar system built using Three.js. It fea
 # How to Run
 
 To run this project, you need to have a server running. You can use any server of your choice. If you have Python installed, you can use Python's built-in HTTP server.
-'''
-python -m http.server
-'''
+
+`python -m http.server`
 
 Then, open your web browser and navigate to http://localhost:8000.
 

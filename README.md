@@ -33,13 +33,14 @@ Then, open your web browser and navigate to http://localhost:8000.
 - Add more celestial bodies like asteroids, comets, and dwarf planets.
 - Improve the textures and models of the planets for a more realistic look.
 - Add more details like the rotation and revolution speed of the planets.
-- Add information about each planet that can be viewed by clicking on the planet.
+- Add other parts to the website such as "about me" etc where each part leads to the camera zooming in on a specific planet. 
 
   
 # Contributions
 
 Contributions, issues, and feature requests are welcome. Feel free to check issues page if you want to contribute.
-Author
+
+# Author
 
 Markus Bajlo
 

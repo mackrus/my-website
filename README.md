@@ -26,7 +26,9 @@ Then, open your web browser and navigate to http://localhost:8000.
 # Libraries Used
 
 - <a href="https://threejs.org">Three.js<a/>: A cross-browser JavaScript library used to create and display animated 3D computer graphics in a web browser.
-Future Improvements
+
+
+# Future Improvements
 
 - Add more celestial bodies like asteroids, comets, and dwarf planets.
 - Improve the textures and models of the planets for a more realistic look.

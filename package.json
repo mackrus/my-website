@@ -11,7 +11,7 @@
     "build": "vite build",
     "preview": "vite preview"
   },
-  "author": "",
+  "author": "Markus Bajlo",
   "license": "MIT",
   "devDependencies": {
     "vite": "^4.5.1"

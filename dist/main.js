@@ -1,8 +1,8 @@
-import './style.css'
+// import './style.css'
 
-import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js';
-import { OrbitControls } from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js/examples/jsm/controls/OrbitControls';
-import { WebGLRenderer } from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js';
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { WebGLRenderer } from 'three/src/renderers/WebGLRenderer';
 
 const canvas = document.querySelector('.webgl')
 
@@ -31,7 +31,7 @@ const geometry = new THREE.SphereGeometry(1, 200, 200);
 
 // Create a texture for which we will load the sun image onto
 const textureLoader = new THREE.TextureLoader();
-const texture = textureLoader.load('sun.jpg');
+const texture = textureLoader.load('photos/sun.jpg');
 
 // Create a MeshBasicMaterial for the sun
 const material = new THREE.MeshBasicMaterial({ map: texture });
@@ -94,17 +94,17 @@ const plutoGeometry = new THREE.SphereGeometry(0.03, 32, 32);
 
 
 // Load textures for each planet photos are from https://www.solarsystemscope.com/textures/
-const mercuryTexture = textureLoader.load('mercury.jpg');
-const venusTexture = textureLoader.load('venus.jpg');
-const earthTexture = textureLoader.load('earth.jpg');
-const moonTexture = textureLoader.load('moon.jpg');
-const marsTexture = textureLoader.load('mars.jpg');
-const jupiterTexture = textureLoader.load('jupiter.jpg');
-const saturnTexture = textureLoader.load('saturn.jpg');
-const saturnringTexture = textureLoader.load('saturn_ring.png')
-const uranusTexture = textureLoader.load('uranus.jpg');
-const neptuneTexture = textureLoader.load('neptune.jpg');
-const plutoTexture = textureLoader.load('pluto.jpg');
+const mercuryTexture = textureLoader.load('photos/mercury.jpg');
+const venusTexture = textureLoader.load('photos/venus.jpg');
+const earthTexture = textureLoader.load('photos/earth.jpg');
+const moonTexture = textureLoader.load('photos/moon.jpg');
+const marsTexture = textureLoader.load('photos/mars.jpg');
+const jupiterTexture = textureLoader.load('photos/jupiter.jpg');
+const saturnTexture = textureLoader.load('photos/saturn.jpg');
+const saturnringTexture = textureLoader.load('photos/saturn_ring.png')
+const uranusTexture = textureLoader.load('photos/uranus.jpg');
+const neptuneTexture = textureLoader.load('photos/neptune.jpg');
+const plutoTexture = textureLoader.load('photos/pluto.jpg');
 
 // Create materials for each planet
 const mercuryMaterial = new THREE.MeshBasicMaterial({ map: mercuryTexture });

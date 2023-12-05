@@ -31,7 +31,7 @@ const geometry = new THREE.SphereGeometry(1, 200, 200);
 
 // Create a texture for which we will load the sun image onto
 const textureLoader = new THREE.TextureLoader();
-const texture = textureLoader.load('sun.jpg');
+const texture = textureLoader.load('photos/sun.jpg');
 
 // Create a MeshBasicMaterial for the sun
 const material = new THREE.MeshBasicMaterial({ map: texture });

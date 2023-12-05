@@ -1,9 +1,7 @@
 // import './style.css'
 
 import * as THREE from 'three';
-// import { OrbitControls } from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-// import { OrbitControls } from T
 import { WebGLRenderer } from 'three/src/renderers/WebGLRenderer';
 
 const canvas = document.querySelector('.webgl')

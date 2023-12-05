@@ -1,9 +1,10 @@
 // import './style.css'
 
-import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js';
-// import { OrbitControls } from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js/examples/jsm/controls/OrbitControls';
-// import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.155.0/examples/jsm/controls/OrbitControls.js';
-// import { WebGLRenderer } from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js';
+import * as THREE from 'three';
+// import { OrbitControls } from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+// import { OrbitControls } from T
+import { WebGLRenderer } from 'three';
 
 const canvas = document.querySelector('.webgl')
 

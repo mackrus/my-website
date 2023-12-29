@@ -27,29 +27,29 @@ scene.add(pointLight, ambientLight);
 const controls = new OrbitControls(camera, renderer.domElement);
 
 // Sun
-const sun = createCelestialBody('photos/sun.jpg', 5);
+const sun = createCelestialBody('photos/celestial_bodies/sun.jpg', 5);
 
 sunGroup.add(sun);
 
 // Load textures for each planet photos are from https://www.solarsystemscope.com/textures/
 // Planets with more realistic proportions and distances (not to scale)
 const planetsInfo = [
-    { name: 'Mercury', texture: 'photos/mercury.jpg', size: 0.383, orbitRadius: 0.69, orbitSpeed: 0.74 },
-    { name: 'Venus', texture: 'photos/venus.jpg', size: 0.949, orbitRadius: 0.92, orbitSpeed: 0.85 },
-    { name: 'Earth', texture: 'photos/earth.jpg', size: 1, orbitRadius: 1.1, orbitSpeed: 0.98 },
-    { name: 'Mars', texture: 'photos/mars.jpg', size: 0.532, orbitRadius: 1.52, orbitSpeed: 1.1 },
-    { name: 'Jupiter', texture: 'photos/jupiter.jpg', size: 11.21, orbitRadius: 3.2, orbitSpeed: 1.31 },
-    { name: 'Saturn', texture: 'photos/saturn.jpg', size: 9.45, orbitRadius: 5.58, orbitSpeed: 1.97 },
-    { name: 'Uranus', texture: 'photos/uranus.jpg', size: 4.01, orbitRadius: 10.22, orbitSpeed: 2.68 },
-    { name: 'Neptune', texture: 'photos/neptune.jpg', size: 3.88, orbitRadius: 17.05, orbitSpeed: 3.54 },
-    { name: 'Pluto', texture: 'photos/pluto.jpg', size: 0.186, orbitRadius: 22.48, orbitSpeed: 4.47 },
+    { name: 'Mercury', texture: 'photos/celestial_bodies/mercury.jpg', size: 0.383, orbitRadius: 0.69, orbitSpeed: 0.54 },
+    { name: 'Venus', texture: 'photos/celestial_bodies/venus.jpg', size: 0.949, orbitRadius: 0.92, orbitSpeed: 0.65 },
+    { name: 'Earth', texture: 'photos/celestial_bodies/earth.jpg', size: 1, orbitRadius: 1.1, orbitSpeed: 0.78 },
+    { name: 'Mars', texture: 'photos/celestial_bodies/mars.jpg', size: 0.532, orbitRadius: 1.52, orbitSpeed: 0.99 },
+    { name: 'Jupiter', texture: 'photos/celestial_bodies/jupiter.jpg', size: 8.21, orbitRadius: 3.2, orbitSpeed: 1.31 },
+    { name: 'Saturn', texture: 'photos/celestial_bodies/saturn.jpg', size: 6.45, orbitRadius: 5.58, orbitSpeed: 1.97 },
+    { name: 'Uranus', texture: 'photos/celestial_bodies/uranus.jpg', size: 4.01, orbitRadius: 10.22, orbitSpeed: 2.68 },
+    { name: 'Neptune', texture: 'photos/celestial_bodies/neptune.jpg', size: 3.88, orbitRadius: 17.05, orbitSpeed: 3.54 },
+    { name: 'Pluto', texture: 'photos/celestial_bodies/pluto.jpg', size: 0.186, orbitRadius: 22.48, orbitSpeed: 5.47 },
 ];
 
 // Add rotation speeds to each planet's data and tune/scale the other parameters
 planetsInfo.forEach(planetInfo => {
-    planetInfo.rotationSpeeds = { x: 0.002, y: 0.002, z: 0.00001 }; // Example values, adjust as needed
+    planetInfo.rotationSpeeds = { x: 0.002, y: 0.000001, z: 0.00001 }; // Example values, adjust as needed
     planetInfo.orbitRadius *= 15;
-    planetInfo.size /= 8;
+    planetInfo.size /= 5;
     planetInfo.orbitSpeed /= 5; 
 });
 
@@ -61,7 +61,7 @@ const planets = planetsInfo.map(info => {
 
 const saturn = planets.find(planet => planet.name === 'Saturn');
 if (saturn) {
-    const saturnRing = createSaturnRing('photos/saturn_ring.png', saturn.size);
+    const saturnRing = createSaturnRing('photos/celestial_bodies/saturn_ring.png', saturn.size);
     saturn.object.add(saturnRing);
 };
 
@@ -88,10 +88,40 @@ function animate() {
     renderer.render(scene, camera);
 }
 
-animate();
 
-// Scroll event for camera movement
+animate();
+moveCamera();
+
+
+function moveCamera() {
+    // Ensure the sun object is properly defined with a radius
+    if (!sun || !sun.geometry || !sun.geometry.parameters.radius) {
+        console.error('Sun object is not properly defined.');
+        return;
+    }
+
+    // Get the current scroll position
+    const scrollPosition = window.scrollY;
+
+    // Calculate the distance from the sun
+    const distance = 2.5 * sun.geometry.parameters.radius;
+
+    // Calculate the angle based on the scroll position
+    const angle = scrollPosition * 0.002;
+
+    // Calculate the new position of the camera in a spiral pattern
+    const x = distance * Math.cos(angle);
+    const y = scrollPosition * 0.009;
+    const z = distance * Math.sin(-angle);
+
+    // Set the position of the camera
+    camera.position.set(x, y, z);
+}
+
+
+// Attach the moveCamera function to the scroll event
 document.body.onscroll = moveCamera;
+
 
 // Function definitions
 function createCelestialBody(texturePath, size) {
@@ -176,28 +206,11 @@ function createStars(amount) {
     }
 }
 
-// Make a function to move the camera perspective
-function moveCamera() {
-    const move = document.body.getBoundingClientRect().top;
 
-    // Calculate the distance from the sun
-    const distance = 1.1 * sun.geometry.parameters.radius;
 
-    // Calculate the angle based on the scroll position
-    const angle = move * 0.0015;
 
-    // Calculate the new position of the camera in a spiral pattern
-    const x = distance * Math.cos(-angle);
-    const y = move * -0.008;
-    const z = distance * Math.sin(angle);
 
-    // Set the position of the camera
-    camera.position.set(x, y, z);
 
-   
-}
-
-document.body.onscroll = moveCamera;
 
 
 

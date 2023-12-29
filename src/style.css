@@ -76,14 +76,20 @@ blockquote p {
   line-height: 1;
 }
 
-.left {
+
+.right {
   grid-column: 6 / 12;
+}
+
+.cert-container{
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 20px;
 }
 
 .cert {
   width: 300px;
-  height: 250px;
-  
+  height: 185px;
 }
 
 .social-links {
@@ -116,3 +122,4 @@ blockquote p {
   color: red;
   /* red color for github */
 }
+

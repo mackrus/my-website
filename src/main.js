@@ -66,8 +66,6 @@ if (saturn) {
 };
 
 
-
-
 // Stars
 createStars(500);
 
@@ -92,7 +90,6 @@ function animate() {
 animate();
 moveCamera();
 
-
 function moveCamera() {
     // Ensure the sun object is properly defined with a radius
     if (!sun || !sun.geometry || !sun.geometry.parameters.radius) {
@@ -116,8 +113,8 @@ function moveCamera() {
 
     // Set the position of the camera
     camera.position.set(x, y, z);
-}
 
+}
 
 // Attach the moveCamera function to the scroll event
 document.body.onscroll = moveCamera;
@@ -189,9 +186,9 @@ function rotatePlanet(planet, rotationSpeeds) {
 }
 
 function rotateSun() {
-    sun.rotation.x += 0.002;
-    sun.rotation.y += 0.002;
-    sun.rotation.z += 0.0001;
+    sun.rotation.x += 0;
+    sun.rotation.y -= 0.01;
+    sun.rotation.z -= 0.0001;
 
 }
 
